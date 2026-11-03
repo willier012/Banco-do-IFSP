@@ -1,16 +1,17 @@
+import { Routes, Route } from "react-router";
+
+import Home from "./pages/Home";
+import Cadastro from "./pages/Cadastro";
+import Login from "./pages/Login";
+
 function App() {
   return (
-    <>
-      <h1 className="bg-slate-900">Dalier</h1>
-      <p>Meu primeiro componente</p>
-
-      <div className="flex justify-center">
-        <div className="min-w-4xl bg-green-300">
-            <h1 className="text-center">AAAAAAA</h1>
-        </div>
-      </div>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/Cadastro" element={<Cadastro />} />
+      <Route path="/Login" element={<Login />} />
+    </Routes>
+  );
 }
 
 export default App;
