@@ -1,27 +1,59 @@
+
 import { BankIcon } from "@phosphor-icons/react";
 import { Link } from "react-router";
 
 function Home() {
   return (
     <>
-      <div className="flex justify-center">
-        <div className="h-screen min-w-7xl">
-          <div className="flex">
-            <div className="mt-60">
-              <h2>BANCO DALIER</h2>
-              <h1 className="text-3xl font-bold">Faça um Cartão de Crédito <br></br>de Graça</h1>
-              <div className="mt-4">
-              <Link to="/Login" className="bg-[#D4AF37] text-xl rounded-2xl px-4 py-1 text-[#0B1F3A] transition-transform duration-300 hover:scale-110 inline-block">Login</Link>
-              <Link to="/Cadastro" className="bg-[#0B1F3A] text-xl rounded-2xl px-4 py-1 text-[#D4AF37] ml-4 transition-transform duration-300 hover:scale-110 inline-block">Cadastro</Link>
-              </div>
+      {/* PRIMEIRA SEÇÃO */}
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-7xl min-h-screen px-8">
 
+          <div className="flex w-full min-h-screen items-center justify-between">
+
+            {/* TEXTO */}
+            <div className="w-1/2">
+              <h2>BANCO DALIER</h2>
+
+              <h1 className="text-3xl font-bold">
+                Faça um Cartão de Crédito <br />
+                de Graça
+              </h1>
+
+              <div className="mt-4">
+                <Link
+                  to="/Login"
+                  className="bg-[#D4AF37] text-xl rounded-2xl px-4 py-1 text-[#0B1F3A] transition-transform duration-300 hover:scale-110 inline-block"
+                >
+                  Login
+                </Link>
+
+                <Link
+                  to="/Cadastro"
+                  className="bg-[#0B1F3A] text-xl rounded-2xl px-4 py-1 text-[#D4AF37] ml-4 transition-transform duration-300 hover:scale-110 inline-block"
+                >
+                  Cadastro
+                </Link>
+              </div>
             </div>
+
+            {/* IMAGEM */}
+            <div className="w-1/2 flex justify-end items-center">
+              <img
+                src="/cartaodecredito.png"
+                className="w-[650px] max-w-full object-contain"
+                alt="Cartão de crédito"
+              />
+            </div>
+
           </div>
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <div className="min-w-7xl mt-8 rounded-2xl min-h-56 bg-[#0B1F3A] text-white mx-auto">
+      {/* SEGUNDA SEÇÃO */}
+      <div className="w-full flex justify-center px-4">
+        <div className="w-full max-w-7xl mt-8 rounded-2xl min-h-56 bg-[#0B1F3A] text-white mx-auto">
+
           <div className="flex mt-4">
             <div className="mx-4">
               <BankIcon
@@ -30,31 +62,50 @@ function Home() {
                 weight="duotone"
               />
             </div>
+
             <div>
-              <h1 className="text-2xl text-white font-bold">BANCO DALIER</h1>
-              <p className="text-[#D4AF37]">SEU FUTURO, NOSSA PRIORIDADE</p>
+              <h1 className="text-2xl text-white font-bold">
+                BANCO DALIER
+              </h1>
+
+              <p className="text-[#D4AF37]">
+                SEU FUTURO, NOSSA PRIORIDADE
+              </p>
             </div>
           </div>
-          <hr className="text-[#163E6C] mx-auto max-w-19/20 mt-4" />
+
+          <hr className="text-[#163E6C] mx-auto max-w-[95%] mt-4" />
+
           <div>HISTORIA DO BANCO</div>
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <div className="min-w-7xl grid grid-cols-3 mx-auto mt-8 gap-26">
+      {/* TERCEIRA SEÇÃO */}
+      <div className="w-full flex justify-center px-4">
+        <div className="w-full max-w-7xl grid grid-cols-3 mx-auto mt-8 gap-8">
+
           <div className="bg-white min-h-32 rounded-2xl flex items-center justify-center">
-            <h2 className="text-center text-xl ">NOSSAS METAS</h2>
+            <h2 className="text-center text-xl">
+              NOSSAS METAS
+            </h2>
           </div>
+
           <div className="bg-white min-h-32 rounded-2xl flex items-center justify-center">
-            <h2 className="text-center text-xl ">CONTRIBUIÇÕES</h2>
+            <h2 className="text-center text-xl">
+              CONTRIBUIÇÕES
+            </h2>
           </div>
+
           <div className="bg-[#D4AF37] min-h-32 rounded-2xl flex items-center justify-center">
-            <h2 className="text-center text-xl text-[#0B1F3A]">USUÁRIOS ON-LINE</h2>
+            <h2 className="text-center text-xl text-[#0B1F3A]">
+              USUÁRIOS ON-LINE
+            </h2>
           </div>
+
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default Home;
