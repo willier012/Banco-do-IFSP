@@ -6,16 +6,16 @@ function Home() {
   return (
     <>
       {/* PRIMEIRA SEÇÃO */}
-      <div className="w-full flex justify-center">
-        <div className="w-full max-w-7xl min-h-screen px-8">
+      <div className="w-full bg-[#0B1F3A] flex justify-center">
+        <div className="w-full min-h-screen px-8 bg-[#0B1F3A]">
 
           <div className="flex w-full min-h-screen items-center justify-between">
 
             {/* TEXTO */}
-            <div className="w-1/2">
-              <h2>BANCO DALIER</h2>
+            <div className="w-1/2 ml-48">
+              <h2 className="text-white">BANCO DALIER</h2>
 
-              <h1 className="text-3xl font-bold">
+              <h1 className="text-3xl font-bold text-white">
                 Faça um Cartão de Crédito <br />
                 de Graça
               </h1>
@@ -38,12 +38,29 @@ function Home() {
             </div>
 
             {/* IMAGEM */}
-            <div className="w-1/2 flex justify-end items-center">
+            <div className="w-1/2 flex justify-end items-center relative mr-32">
+
+              {/* CÍRCULO PONTILHADO */}
+              <div
+                className="absolute w-[600px] h-[600px] rounded-full z-0 right-4"
+                style={{
+                  backgroundImage: `
+  radial-gradient(circle, transparent 20%, transparent 100%),
+  radial-gradient(circle, rgba(255,255,255,0.9) 1.5px, transparent 2px)
+                  `,
+                  backgroundSize: "100% 100%, 10px 10px",
+                  maskImage: "radial-gradient(circle, black 0%, transparent 100%)",
+                  WebkitMaskImage: "radial-gradient(circle, black 0%, transparent 100%)"
+                }}
+              />
+
+              {/* FOTO DO CARTÃO */}
               <img
                 src="/cartaodecredito.png"
-                className="w-[650px] max-w-full object-contain"
+                className="w-[650px] max-w-full object-contain relative z-10"
                 alt="Cartão de crédito"
               />
+
             </div>
 
           </div>
