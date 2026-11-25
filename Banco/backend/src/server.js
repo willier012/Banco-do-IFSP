@@ -1,6 +1,12 @@
-
+const cors = require('cors');
 const express = require('express');
 const prisma = require('./prisma');
+require('dotenv').config();
+
+
+if (!process.env.JWT_SECRET) {
+  throw new Error('JWT_SECRET não configurado no .env');
+}
 
 // Importando as rotas
 const usuarioRoutes = require('./routes/usuarioRoutes');
@@ -10,6 +16,7 @@ const app = express();
 const PORTA = 3000;
 
 app.use(express.json());
+app.use(cors());
 
 // Teste de conexão com o banco
 app.get('/status', async (req, res) => {
@@ -17,7 +24,7 @@ app.get('/status', async (req, res) => {
     await prisma.$connect();
 
     return res.json({
-      status: 'API Online - Projeto Semana 2',
+      status: 'API Online',
       banco: 'PostgreSQL conectado!'
     });
 
@@ -30,7 +37,7 @@ app.get('/status', async (req, res) => {
   }
 });
 
-// Registrando as rotas do CRUD
+// Registrando as rotas
 app.use(usuarioRoutes);
 app.use(contaRoutes);
 
@@ -38,4 +45,3 @@ app.use(contaRoutes);
 app.listen(PORTA, () => {
   console.log(`[SERVIDOR OK] Rodando em http://localhost:${PORTA}`);
 });
-""

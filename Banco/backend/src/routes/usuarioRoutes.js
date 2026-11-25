@@ -7,6 +7,9 @@ const usuarioController = require('../controller/usuarioController');
 // Cadastrar usuário
 router.post('/usuarios', usuarioController.criarUsuario);
 
+// Login
+router.post('/login', usuarioController.loginUsuario);
+
 // Listar usuários
 router.get('/usuarios', usuarioController.listarUsuarios);
 
