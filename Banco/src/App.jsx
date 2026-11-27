@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import PageHome from "./pages/PageHome";
 import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
+import Pix from "./pages/Pix";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
 
       {/* Página após o login */}
       <Route path="/PageHome" element={<PageHome />} />
+
+      <Route path="/Pix" element={<Pix />} />
     </Routes>
   );
 }

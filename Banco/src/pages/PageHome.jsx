@@ -1,5 +1,5 @@
 
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 function Home() {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ function Home() {
         </button>
       </header>
 
-      <main className="mt-20 text-center">
+      <div className="min-w-7xl text-center">
         <h2 className="text-4xl font-bold">
           Bem-vindo, {usuario.nome}!
         </h2>
@@ -45,24 +45,23 @@ function Home() {
           Você entrou na sua conta com sucesso.
         </p>
 
-        <div className="mt-12 bg-[#D4AF37] text-[#0B1F3A] rounded-2xl p-10 max-w-xl mx-auto">
-          <h3 className="text-2xl font-bold">
-            Seus dados
-          </h3>
+        <div className="mt-4 bg-[#D4AF37] text-[#0B1F3A] rounded-2xl p-10 max-w-4xl h-76 mx-auto">
+          <h3 className="text-2xl font-bold">Seus dados</h3>
 
-          <p className="mt-4">
-            Nome: {usuario.nome}
-          </p>
+          <p className="mt-4">Nome: {usuario.nome}</p>
 
-          <p>
-            E-mail: {usuario.email}
-          </p>
+          <p>E-mail: {usuario.email}</p>
 
-          <p>
-            ID: {usuario.id}
-          </p>
+          <p>ID: {usuario.id}</p>
         </div>
-      </main>
+        <div className="max-w-4xl grid grid-cols-3 gap-12 mx-auto mt-4">
+          <div className="bg-white rounded-2xl h-24">
+            <Link to="/Pix" className="text-black">PIX</Link>
+          </div>
+          <div className="bg-white rounded-2xl">a</div>
+          <div className="bg-white rounded-2xl">a</div>
+        </div>
+      </div>
 
     </div>
   );
